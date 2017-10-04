@@ -4,7 +4,7 @@ import java.io.IOException;
 
 
 class RiddleWord {
-    private String word;
+    final private String word;
     private boolean[] hitLetters;
 
     RiddleWord(String s){
@@ -14,7 +14,7 @@ class RiddleWord {
         for(int i = 0;i< hitLetters.length;i++) hitLetters[i]=false;
     }
 
-    public void getWord(){
+    String getWord(){
         char[] result = new char[word.length()];
 
         for(int i = 0;i< word.length();i++){
@@ -24,16 +24,17 @@ class RiddleWord {
         System.out.print("The word is: ");
         System.out.println(result);
         System.out.println();
+        return String.valueOf(result);
     }
 
-    public boolean wordComplete(){
+    boolean wordComplete(){
         boolean result = true;
         for(int i = 0;i< word.length();i++)
             result = result && hitLetters[i];
         return result;
     }
 
-    public boolean CheckLetter(char c){
+    boolean CheckLetter(char c){
         boolean result = false;
 
         for(int i = 0;i< word.length();i++){
