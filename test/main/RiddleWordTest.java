@@ -15,7 +15,7 @@ class RiddleWordTest {
 
     @Test
     void checkLetter() {
-        assert (new RiddleWord("TEST")).CheckLetter('T');
+        assert (new RiddleWord("TEST")).checkLetter('T');
     }
 
 }
